@@ -13,8 +13,9 @@ export default function Contact({ className }: { className: string }) {
         'YOUR_TEMPLATE_ID', // Remplacez par votre Template ID EmailJS
         {
           from_name: (form.current.elements.namedItem('from_name') as HTMLInputElement).value,
-          from_email: (form.current.elements.namedItem('from_email') as HTMLInputElement).value,
+          reply_to: (form.current.elements.namedItem('from_email') as HTMLInputElement).value,
           message: (form.current.elements.namedItem('message') as HTMLTextAreaElement).value,
+          date: new Date().toLocaleDateString('fr-FR'),
         },
         'YOUR_PUBLIC_KEY' // Remplacez par votre Public Key EmailJS
       )
