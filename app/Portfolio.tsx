@@ -134,32 +134,8 @@ export default function Portfolio() {
     (window as any).go = go;
     setTimeout(() => document.querySelectorAll('#pg-home .f').forEach((el: any, i) => setTimeout(() => el.classList.add('in'), i * 90)), 80);
 
-    // Photo upload
-    const inpPhoto = document.getElementById('inp-photo') as HTMLInputElement;
-    if (inpPhoto) {
-      inpPhoto.addEventListener('change', function () {
-        if (!this.files?.[0]) return;
-        const r = new FileReader();
-        r.onload = e => {
-          const img = document.getElementById('photo-img') as HTMLImageElement;
-          if (img) { img.src = e.target?.result as string; img.classList.add('show'); }
-          document.getElementById('photo-ph')!.style.display = 'none';
-        };
-        r.readAsDataURL(this.files[0]);
-      });
-    }
-
-    // PDF upload
-    const inpPdf = document.getElementById('inp-pdf') as HTMLInputElement;
-    if (inpPdf) {
-      inpPdf.addEventListener('change', function () {
-        if (!this.files?.[0]) return;
-        document.getElementById('pdf-sub')!.textContent = this.files[0].name;
-        const url = URL.createObjectURL(this.files[0]);
-        (document.querySelector('.pdf-card') as HTMLElement).onclick = () => window.open(url, '_blank');
-        document.querySelector('.pdf-arr')!.textContent = '↗';
-      });
-    }
+    // Photo upload - removed
+    // PDF upload - removed
 
     // Form submit
     const form = document.querySelector('.cf') as HTMLFormElement;
@@ -238,19 +214,17 @@ export default function Portfolio() {
           </div>
 
           <div className="hero-r">
-            <div className="photo-zone f" onClick={() => document.getElementById('inp-photo')?.click()}>
+            <div className="photo-zone f">
               <div className="photo-ring">
                 <div className="photo-inner">
-                  <img id="photo-img" src="/photo.jpg" alt="" className="show" />
+                  <img id="photo-img" src="/images/Florent-Pennecot.jpeg" alt="" className="show" />
                   <div className="photo-ph" id="photo-ph" style={{ display: 'none' }}>
                     <div className="photo-ph-ic">👤</div>
                     <div className="photo-ph-tx">Ajouter photo</div>
                   </div>
                 </div>
               </div>
-              <div className="photo-hint">Cliquer pour importer</div>
             </div>
-            <input type="file" id="inp-photo" accept="image/*" />
 
             <div className="stat-grid f">
               <div className="stat"><span className="stat-n">7+</span><span className="stat-l">Stages</span></div>
@@ -259,17 +233,16 @@ export default function Portfolio() {
               <div className="stat"><span className="stat-n">2026</span><span className="stat-l">Diplôme</span></div>
             </div>
 
-            <div className="pdf-zone f" onClick={() => window.open('/cv.pdf', '_blank')}>
+            <div className="pdf-zone f" onClick={() => window.open('/assets/cv/CV-Florent-Pennecot.pdf', '_blank')}>
               <div className="pdf-card">
                 <div className="pdf-ico">PDF</div>
                 <div className="pdf-info">
                   <span className="pdf-name">Mon CV</span>
-                  <span className="pdf-sub" id="pdf-sub">cv.pdf</span>
+                  <span className="pdf-sub" id="pdf-sub">CV-Florent-Pennecot.pdf</span>
                 </div>
                 <span className="pdf-arr">↗</span>
               </div>
             </div>
-            <input type="file" id="inp-pdf" accept=".pdf" />
 
             <div className="socials f">
               <a className="soc" href="https://github.com" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
