@@ -13,12 +13,13 @@ export default function Contact({ className }: ContactProps) {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const name = formData.get("from_name") as string;
-    const email = formData.get("reply_to") as string;
+    const email = formData.get("from_email") as string;
     const message = formData.get("message") as string;
 
     const templateParams = {
       from_name: name,
-      reply_to: email,
+      from_email: email,
+      reply_to: email, // 🔥 important pour répondre
       message: message,
       date: new Date().toLocaleDateString("fr-FR"),
     };
@@ -114,7 +115,7 @@ export default function Contact({ className }: ContactProps) {
               <input
                 className="fi"
                 type="email"
-                name="reply_to"
+                name="from_email"
                 placeholder="votre@email.com"
                 required
               />
