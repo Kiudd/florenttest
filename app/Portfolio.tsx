@@ -241,8 +241,8 @@ export default function Portfolio() {
             <div className="photo-zone f" onClick={() => document.getElementById('inp-photo')?.click()}>
               <div className="photo-ring">
                 <div className="photo-inner">
-                  <img id="photo-img" src="" alt="" />
-                  <div className="photo-ph" id="photo-ph">
+                  <img id="photo-img" src="/photo.jpg" alt="" className="show" />
+                  <div className="photo-ph" id="photo-ph" style={{ display: 'none' }}>
                     <div className="photo-ph-ic">👤</div>
                     <div className="photo-ph-tx">Ajouter photo</div>
                   </div>
@@ -259,14 +259,14 @@ export default function Portfolio() {
               <div className="stat"><span className="stat-n">2026</span><span className="stat-l">Diplôme</span></div>
             </div>
 
-            <div className="pdf-zone f" onClick={() => document.getElementById('inp-pdf')?.click()}>
+            <div className="pdf-zone f" onClick={() => window.open('/cv.pdf', '_blank')}>
               <div className="pdf-card">
                 <div className="pdf-ico">PDF</div>
                 <div className="pdf-info">
                   <span className="pdf-name">Mon CV</span>
-                  <span className="pdf-sub" id="pdf-sub">Cliquer pour importer</span>
+                  <span className="pdf-sub" id="pdf-sub">cv.pdf</span>
                 </div>
-                <span className="pdf-arr">↓</span>
+                <span className="pdf-arr">↗</span>
               </div>
             </div>
             <input type="file" id="inp-pdf" accept=".pdf" />
