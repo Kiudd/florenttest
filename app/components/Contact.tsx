@@ -70,7 +70,7 @@ export default function Contact({ className }: ContactProps) {
               <a className="cl" href="mailto:florent.pennecot@gmail.com">
                 <div>
                   <span className="cl-lbl">Email</span>
-                  <span className="cl-val">florent.pennecot@gmail.com</span>
+                  <span className="cl-val">Me contacter par email</span>
                 </div>
                 <span className="cl-arr">→</span>
               </a>
@@ -80,7 +80,12 @@ export default function Contact({ className }: ContactProps) {
                   <span className="cl-val">94 Bd Arago, Rivesaltes (66)</span>
                 </div>
               </div>
-              <a className="cl" href="https://linkedin.com" target="_blank">
+              <a
+                className="cl"
+                href="https://www.linkedin.com/in/florent-penneçot-8b000138a/
+"
+                target="_blank"
+              >
                 <div>
                   <span className="cl-lbl">LinkedIn</span>
                   <span className="cl-val">Florent Penneçot</span>
