@@ -1,6 +1,6 @@
-export default function Experience() {
+export default function Experience({ className }: { className: string }) {
   return (
-    <div className="pg" id="pg-exp">
+    <div className={className} id="pg-exp">
       <div className="pm">
         <div className="ph f">
           <span className="ph-tag">02 — Expérience</span>

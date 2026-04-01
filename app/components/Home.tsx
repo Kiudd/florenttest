@@ -1,6 +1,6 @@
-export default function Home({ go }: { go: (id: string) => void }) {
+export default function Home({ go, className }: { go: (id: string) => void; className: string }) {
   return (
-    <div className="pg show" id="pg-home">
+    <div className={className} id="pg-home">
       <div className="hero">
         <div className="hero-l">
           <div className="terminal f">

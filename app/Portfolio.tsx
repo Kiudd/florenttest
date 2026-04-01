@@ -18,6 +18,16 @@ export default function Portfolio() {
     // Update nav links
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('on'));
     document.getElementById('nl-' + id)?.classList.add('on');
+    // Update page visibility
+    document.querySelectorAll('.pg').forEach(p => p.classList.remove('show'));
+    document.getElementById('pg-' + id)?.classList.add('show');
+    // Animate elements
+    setTimeout(() => {
+      document.querySelectorAll('#pg-' + id + ' .f').forEach((el, i) => {
+        (el as HTMLElement).classList.remove('in');
+        setTimeout(() => (el as HTMLElement).classList.add('in'), i * 75);
+      });
+    }, 10);
   };
 
   useEffect(() => {
@@ -349,6 +359,13 @@ export default function Portfolio() {
           cl.insertAdjacentHTML("afterend", '<span class="tc-cursor"></span>');
       }, 6900);
     }
+
+    // Initial animation for home page
+    setTimeout(() => {
+      document.querySelectorAll('#pg-home .f').forEach((el, i) => {
+        setTimeout(() => (el as HTMLElement).classList.add('in'), i * 90);
+      });
+    }, 80);
   }, []);
 
   return (
@@ -401,10 +418,10 @@ export default function Portfolio() {
         </ul>
       </nav>
 
-      {currentPage === "home" && <Home go={go} />}
-      {currentPage === "about" && <About />}
-      {currentPage === "exp" && <Experience />}
-      {currentPage === "contact" && <Contact />}
+      <Home className={currentPage === "home" ? "pg show" : "pg"} go={go} />
+      <About className={currentPage === "about" ? "pg show" : "pg"} />
+      <Experience className={currentPage === "exp" ? "pg show" : "pg"} />
+      <Contact className={currentPage === "contact" ? "pg show" : "pg"} />
     </>
   );
 }

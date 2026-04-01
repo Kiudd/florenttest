@@ -1,6 +1,6 @@
-export default function Contact() {
+export default function Contact({ className }: { className: string }) {
   return (
-    <div className="pg" id="pg-contact">
+    <div className={className} id="pg-contact">
       <div className="pm">
         <div className="ph f">
           <span className="ph-tag">03 — Contact</span>

@@ -1,6 +1,6 @@
-export default function About() {
+export default function About({ className }: { className: string }) {
   return (
-    <div className="pg" id="pg-about">
+    <div className={className} id="pg-about">
       <div className="pm">
         <div className="ph f">
           <span className="ph-tag">01 — À propos</span>
