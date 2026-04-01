@@ -164,8 +164,8 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
 }
 
 @media(min-width:1200px){
-  .hero{grid-template-columns:1fr 1fr}
-  .hero-l{padding:4rem 2rem;max-width:600px;margin:0 auto}
-  .hero-r{padding:2.5rem 1rem;max-width:400px;margin:0 auto}
-  .term-content{min-height:350px}
+  .hero{grid-template-columns:1fr min(380px, 30vw)}
+  .hero-l{padding:4rem 2rem;max-width:700px;margin:0 auto}
+  .hero-r{padding:2.5rem 1rem;max-width:380px;margin:0 auto}
+  .term-content{min-height:clamp(220px, 50vh, 350px)}
 }
