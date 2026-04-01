@@ -22,19 +22,19 @@ export default function Contact({ className }: ContactProps) {
 
     emailjs
       .send(
-        "service_f4m5324", // Replace with your EmailJS service ID
-        "template_0uoxsbr", // Replace with your EmailJS template ID
+        "service_f4m5324",
+        "template_0uoxsbr",
         templateParams,
-        "JgRY19AzXkPami1z5", // Replace with your EmailJS public key
+        "JgRY19AzXkPami1z5",
       )
       .then(
         (result) => {
-          console.log("Email sent successfully:", result.text);
+          console.log("Email envoyé :", result.text);
           document.getElementById("ok")!.style.display = "block";
           form.reset();
         },
         (error) => {
-          console.error("Failed to send email:", error.text);
+          console.error("Erreur :", error.text);
           alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
         },
       );
@@ -70,10 +70,9 @@ export default function Contact({ className }: ContactProps) {
                   <span className="cl-val">94 Bd Arago, Rivesaltes (66)</span>
                 </div>
               </div>
-              <a
+              
                 className="cl"
-                href="https://www.linkedin.com/in/florent-penneçot-8b000138a/
-"
+                href="https://www.linkedin.com/in/florent-penneçot-8b000138a/"
                 target="_blank"
               >
                 <div>
@@ -82,7 +81,7 @@ export default function Contact({ className }: ContactProps) {
                 </div>
                 <span className="cl-arr">→</span>
               </a>
-              <a
+              
                 className="cl"
                 href="https://github.com/Florent-Tech"
                 target="_blank"
