@@ -28,7 +28,7 @@ export default function Contact({ className }: ContactProps) {
         "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
         "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
         templateParams,
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+        "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
       )
       .then(
         (result) => {
@@ -39,7 +39,7 @@ export default function Contact({ className }: ContactProps) {
         (error) => {
           console.error("Failed to send email:", error.text);
           alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
-        }
+        },
       );
   };
 
@@ -87,10 +87,14 @@ export default function Contact({ className }: ContactProps) {
                 </div>
                 <span className="cl-arr">→</span>
               </a>
-              <a className="cl" href="https://github.com" target="_blank">
+              <a
+                className="cl"
+                href="https://github.com/Florent-Tech"
+                target="_blank"
+              >
                 <div>
                   <span className="cl-lbl">GitHub</span>
-                  <span className="cl-val">github.com/florent</span>
+                  <span className="cl-val">github.com/florent-Tech</span>
                 </div>
                 <span className="cl-arr">→</span>
               </a>
@@ -126,7 +130,11 @@ export default function Contact({ className }: ContactProps) {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="btn-p" style={{ border: "none", cursor: "pointer", width: "100%" }}>
+            <button
+              type="submit"
+              className="btn-p"
+              style={{ border: "none", cursor: "pointer", width: "100%" }}
+            >
               Envoyer le message
             </button>
             <p className="ok" id="ok">
