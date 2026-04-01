@@ -1,4 +1,10 @@
-export default function Home({ go, className }: { go: (id: string) => void; className: string }) {
+export default function Home({
+  go,
+  className,
+}: {
+  go: (id: string) => void;
+  className: string;
+}) {
   return (
     <div className={className} id="pg-home">
       <div className="hero">
@@ -16,21 +22,15 @@ export default function Home({ go, className }: { go: (id: string) => void; clas
           <p className="etag f">Disponible · Rivesaltes, France</p>
           <p className="h-role f">Technicien Réseau &amp; Cybersécurité</p>
           <p className="h-desc f">
-            Passionné d'informatique — hardware, réseaux, cybersécurité.
+            Passionné d'informatique hardware, réseaux, cybersécurité.
             <br />
             Bac Pro CIEL 2023–2026 · 7 stages professionnels réalisés.
           </p>
           <div className="cta f">
-            <button
-              className="btn-p"
-              onClick={() => go("exp")}
-            >
+            <button className="btn-p" onClick={() => go("exp")}>
               Mon parcours
             </button>
-            <button
-              className="btn-o"
-              onClick={() => go("contact")}
-            >
+            <button className="btn-o" onClick={() => go("contact")}>
               Me contacter
             </button>
           </div>
@@ -118,7 +118,7 @@ export default function Home({ go, className }: { go: (id: string) => void; clas
         </div>
       </div>
       <footer className="foot">
-        <p>© 2026 — Florent Penneçot</p>
+        <p>© 2026 Florent Penneçot</p>
         <p>Rivesaltes · France</p>
       </footer>
     </div>
