@@ -11,16 +11,12 @@ export default function Contact({ className }: ContactProps) {
     e.preventDefault();
 
     const form = e.currentTarget;
-    const formData = new FormData(form);
-    const name = formData.get("from_name") as string;
-    const email = formData.get("from_email") as string;
-    const message = formData.get("message") as string;
 
     const templateParams = {
-      from_name: name,
-      from_email: email,
-      reply_to: email, // 🔥 important pour répondre
-      message: message,
+      from_name: (form.elements.namedItem("from_name") as HTMLInputElement).value,
+      from_email: (form.elements.namedItem("from_email") as HTMLInputElement).value,
+      reply_to: (form.elements.namedItem("from_email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       date: new Date().toLocaleDateString("fr-FR"),
     };
 
