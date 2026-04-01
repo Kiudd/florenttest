@@ -67,13 +67,6 @@ export default function Contact({ className }: ContactProps) {
                 </div>
                 <span className="cl-arr">→</span>
               </a>
-              <a className="cl" href="mailto:florent.pennecot@gmail.com">
-                <div>
-                  <span className="cl-lbl">Email</span>
-                  <span className="cl-val">Me contacter par email</span>
-                </div>
-                <span className="cl-arr">→</span>
-              </a>
               <div className="cl">
                 <div>
                   <span className="cl-lbl">Adresse</span>
