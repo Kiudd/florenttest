@@ -1,35 +1,48 @@
-import { useRef } from 'react';
-import { send } from '@emailjs/browser';
+"use client";
 
-export default function Contact({ className }: { className: string }) {
-  const form = useRef<HTMLFormElement>(null);
+import emailjs from "@emailjs/browser";
 
-  const sendEmail = (e: React.FormEvent) => {
+interface ContactProps {
+  className: string;
+}
+
+export default function Contact({ className }: ContactProps) {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (form.current) {
-      send(
-        'YOUR_SERVICE_ID', // Remplacez par votre Service ID EmailJS
-        'YOUR_TEMPLATE_ID', // Remplacez par votre Template ID EmailJS
-        {
-          from_name: (form.current.elements.namedItem('from_name') as HTMLInputElement).value,
-          reply_to: (form.current.elements.namedItem('from_email') as HTMLInputElement).value,
-          message: (form.current.elements.namedItem('message') as HTMLTextAreaElement).value,
-          date: new Date().toLocaleDateString('fr-FR'),
-        },
-        'YOUR_PUBLIC_KEY' // Remplacez par votre Public Key EmailJS
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("from_name") as string;
+    const email = formData.get("reply_to") as string;
+    const message = formData.get("message") as string;
+
+    const templateParams = {
+      from_name: name,
+      reply_to: email,
+      message: message,
+      date: new Date().toLocaleDateString("fr-FR"),
+    };
+
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        templateParams,
+        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
       )
-        .then((result) => {
-          console.log(result.text);
-          document.getElementById('ok')!.style.display = 'block';
-          form.current!.reset();
-        })
-        .catch((error) => {
-          console.log(error.text);
-          alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
-        });
-    }
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          document.getElementById("ok")!.style.display = "block";
+          form.reset();
+        },
+        (error) => {
+          console.error("Failed to send email:", error.text);
+          alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+        }
+      );
   };
+
   return (
     <div className={className} id="pg-contact">
       <div className="pm">
@@ -44,8 +57,7 @@ export default function Contact({ className }: { className: string }) {
         <div className="cg">
           <div className="f">
             <p className="ci-intro">
-              Disponible pour des stages, alternances ou discussions
-              techniques.
+              Disponible pour des stages, alternances ou discussions techniques.
             </p>
             <div className="cls">
               <a className="cl" href="tel:+33603692812">
@@ -84,11 +96,7 @@ export default function Contact({ className }: { className: string }) {
               </a>
             </div>
           </div>
-          <form
-            ref={form}
-            className="cf f"
-            onSubmit={sendEmail}
-          >
+          <form className="cf f" onSubmit={sendEmail}>
             <div className="fg">
               <label className="fl">Nom</label>
               <input
@@ -104,7 +112,7 @@ export default function Contact({ className }: { className: string }) {
               <input
                 className="fi"
                 type="email"
-                name="from_email"
+                name="reply_to"
                 placeholder="votre@email.com"
                 required
               />
@@ -118,11 +126,7 @@ export default function Contact({ className }: { className: string }) {
                 required
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className="btn-p"
-              style={{ border: "none", cursor: "pointer", width: "100%" }}
-            >
+            <button type="submit" className="btn-p" style={{ border: "none", cursor: "pointer", width: "100%" }}>
               Envoyer le message
             </button>
             <p className="ok" id="ok">
