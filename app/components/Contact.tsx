@@ -70,25 +70,17 @@ export default function Contact({ className }: ContactProps) {
                   <span className="cl-val">94 Bd Arago, Rivesaltes (66)</span>
                 </div>
               </div>
-              
-                className="cl"
-                href="https://www.linkedin.com/in/florent-penneçot-8b000138a/"
-                target="_blank"
-              >
+              <a className="cl" href="https://linkedin.com" target="_blank">
                 <div>
                   <span className="cl-lbl">LinkedIn</span>
                   <span className="cl-val">Florent Penneçot</span>
                 </div>
                 <span className="cl-arr">→</span>
               </a>
-              
-                className="cl"
-                href="https://github.com/Florent-Tech"
-                target="_blank"
-              >
+              <a className="cl" href="https://github.com" target="_blank">
                 <div>
                   <span className="cl-lbl">GitHub</span>
-                  <span className="cl-val">github.com/florent-Tech</span>
+                  <span className="cl-val">github.com/florent</span>
                 </div>
                 <span className="cl-arr">→</span>
               </a>
