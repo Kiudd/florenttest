@@ -1,4 +1,34 @@
+import { useRef } from 'react';
+import { send } from '@emailjs/browser';
+
 export default function Contact({ className }: { className: string }) {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (form.current) {
+      send(
+        'YOUR_SERVICE_ID', // Remplacez par votre Service ID EmailJS
+        'YOUR_TEMPLATE_ID', // Remplacez par votre Template ID EmailJS
+        {
+          from_name: (form.current.elements.namedItem('from_name') as HTMLInputElement).value,
+          from_email: (form.current.elements.namedItem('from_email') as HTMLInputElement).value,
+          message: (form.current.elements.namedItem('message') as HTMLTextAreaElement).value,
+        },
+        'YOUR_PUBLIC_KEY' // Remplacez par votre Public Key EmailJS
+      )
+        .then((result) => {
+          console.log(result.text);
+          document.getElementById('ok')!.style.display = 'block';
+          form.current!.reset();
+        })
+        .catch((error) => {
+          console.log(error.text);
+          alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+        });
+    }
+  };
   return (
     <div className={className} id="pg-contact">
       <div className="pm">
@@ -54,18 +84,16 @@ export default function Contact({ className }: { className: string }) {
             </div>
           </div>
           <form
+            ref={form}
             className="cf f"
-            onSubmit={(e) => {
-              e.preventDefault();
-              document.getElementById("ok")!.style.display = "block";
-              (e.target as HTMLFormElement).reset();
-            }}
+            onSubmit={sendEmail}
           >
             <div className="fg">
               <label className="fl">Nom</label>
               <input
                 className="fi"
                 type="text"
+                name="from_name"
                 placeholder="Votre nom"
                 required
               />
@@ -75,6 +103,7 @@ export default function Contact({ className }: { className: string }) {
               <input
                 className="fi"
                 type="email"
+                name="from_email"
                 placeholder="votre@email.com"
                 required
               />
@@ -83,6 +112,7 @@ export default function Contact({ className }: { className: string }) {
               <label className="fl">Message</label>
               <textarea
                 className="ft"
+                name="message"
                 placeholder="Votre message..."
                 required
               ></textarea>
