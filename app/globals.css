@@ -162,3 +162,10 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
   .nav,.pm{padding-left:1.2rem;padding-right:1.2rem}
   .hero-l{padding:3rem 1.5rem}
 }
+
+@media(min-width:1200px){
+  .hero{grid-template-columns:1fr 1fr}
+  .hero-l{padding:4rem 2rem;max-width:600px;margin:0 auto}
+  .hero-r{padding:2.5rem 1rem;max-width:400px;margin:0 auto}
+  .term-content{min-height:350px}
+}
