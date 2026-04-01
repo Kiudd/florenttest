@@ -25,10 +25,10 @@ export default function Contact({ className }: ContactProps) {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        "service_f4m5324", // Replace with your EmailJS service ID
+        "template_0uoxsbr", // Replace with your EmailJS template ID
         templateParams,
-        "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+        "JgRY19AzXkPami1z5", // Replace with your EmailJS public key
       )
       .then(
         (result) => {
