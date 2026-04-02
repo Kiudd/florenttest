@@ -12,31 +12,31 @@ export default function Contact({ className }: ContactProps) {
 
     const form = e.currentTarget;
 
-    console.log("Message value:", form.message.value);
-    console.log("Form elements:", form.elements);
+    const formData = new FormData(form);
 
     const templateParams = {
-      from_name: form.from_name.value,
-      from_email: form.from_email.value,
-      reply_to: form.from_email.value,
-      message: form.message.value,
+      from_name: formData.get("from_name")?.toString() || "",
+      from_email: formData.get("from_email")?.toString() || "",
+      reply_to: formData.get("from_email")?.toString() || "",
+      message: formData.get("message")?.toString() || "",
       date: new Date().toLocaleDateString("fr-FR"),
     };
 
-    console.log("Paramètres du template :", templateParams);
+    console.log("PARAMS:", templateParams);
 
     emailjs
       .send(
         "service_h6xe6q8",
         "template_qbv764g",
         templateParams,
-        "IpLUSkFf-_Epho_7C"
+        "IpLUSkFf-_Epho_7C",
       )
       .then(() => {
         document.getElementById("ok")!.style.display = "block";
         form.reset();
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error(error);
         alert("Erreur lors de l'envoi.");
       });
   };
