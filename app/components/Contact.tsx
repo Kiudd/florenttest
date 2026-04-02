@@ -38,6 +38,9 @@ export default function Contact({ className }: ContactProps) {
         setFromName("");
         setFromEmail("");
         setMessage("");
+
+        // Faire disparaître le message après 4 secondes
+        setTimeout(() => setSuccess(false), 4000);
       })
       .catch((error) => {
         console.error(error);
@@ -148,7 +151,11 @@ export default function Contact({ className }: ContactProps) {
             </button>
 
             {success && (
-              <p className="ok" id="ok">
+              <p
+                className="ok"
+                id="ok"
+                style={{ color: "green", marginTop: "10px" }}
+              >
                 ✓ Message envoyé avec succès.
               </p>
             )}
