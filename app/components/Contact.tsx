@@ -26,10 +26,10 @@ export default function Contact({ className }: ContactProps) {
 
     emailjs
       .send(
-        "service_jf8hly9",
+        "service_h6xe6q8",
         "template_qbv764g",
         templateParams,
-        "JgIpLUSkFf-_Epho_7C",
+        "IpLUSkFf-_Epho_7C",
       )
       .then(
         (result) => {
