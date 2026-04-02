@@ -13,17 +13,21 @@ export default function Contact({ className }: ContactProps) {
     const form = e.currentTarget;
 
     const templateParams = {
-      from_name: (form.elements.namedItem("from_name") as HTMLInputElement).value,
-      from_email: (form.elements.namedItem("from_email") as HTMLInputElement).value,
-      reply_to: (form.elements.namedItem("from_email") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      from_name: (form.elements.namedItem("from_name") as HTMLInputElement)
+        .value,
+      from_email: (form.elements.namedItem("from_email") as HTMLInputElement)
+        .value,
+      reply_to: (form.elements.namedItem("from_email") as HTMLInputElement)
+        .value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
       date: new Date().toLocaleDateString("fr-FR"),
     };
 
     emailjs
       .send(
-        "service_f4m5324",
-        "template_0uoxsbr",
+        "sservice_jf8hly9",
+        "template_y5y7pap",
         templateParams,
         "JgRY19AzXkPami1z5",
       )
@@ -70,14 +74,24 @@ export default function Contact({ className }: ContactProps) {
                   <span className="cl-val">94 Bd Arago, Rivesaltes (66)</span>
                 </div>
               </div>
-              <a className="cl" href="https://linkedin.com" target="_blank">
+              <a
+                className="cl"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener"
+              >
                 <div>
                   <span className="cl-lbl">LinkedIn</span>
                   <span className="cl-val">Florent Penneçot</span>
                 </div>
                 <span className="cl-arr">→</span>
               </a>
-              <a className="cl" href="https://github.com" target="_blank">
+              <a
+                className="cl"
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+              >
                 <div>
                   <span className="cl-lbl">GitHub</span>
                   <span className="cl-val">github.com/florent</span>
@@ -116,11 +130,7 @@ export default function Contact({ className }: ContactProps) {
                 required
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className="btn-p"
-              style={{ border: "none", cursor: "pointer", width: "100%" }}
-            >
+            <button type="submit" className="btn-p">
               Envoyer le message
             </button>
             <p className="ok" id="ok">
