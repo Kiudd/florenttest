@@ -12,13 +12,20 @@ export default function Contact({ className }: ContactProps) {
 
     const form = e.currentTarget;
 
-    const formData = new FormData(form);
+    // Récupère les champs directement depuis form.elements
+    const from_name = (form.elements.namedItem("from_name") as HTMLInputElement)
+      .value;
+    const from_email = (
+      form.elements.namedItem("from_email") as HTMLInputElement
+    ).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
+      .value;
 
     const templateParams = {
-      from_name: formData.get("from_name")?.toString() || "",
-      from_email: formData.get("from_email")?.toString() || "",
-      reply_to: formData.get("from_email")?.toString() || "",
-      message: formData.get("message")?.toString() || "",
+      from_name,
+      from_email,
+      reply_to: from_email,
+      message,
       date: new Date().toLocaleDateString("fr-FR"),
     };
 
@@ -57,45 +64,7 @@ export default function Contact({ className }: ContactProps) {
             <p className="ci-intro">
               Disponible pour des stages, alternances ou discussions techniques.
             </p>
-            <div className="cls">
-              <a className="cl" href="tel:+33603692812">
-                <div>
-                  <span className="cl-lbl">Téléphone</span>
-                  <span className="cl-val">+33 6 03 69 28 12</span>
-                </div>
-                <span className="cl-arr">→</span>
-              </a>
-              <div className="cl">
-                <div>
-                  <span className="cl-lbl">Adresse</span>
-                  <span className="cl-val">94 Bd Arago, Rivesaltes (66)</span>
-                </div>
-              </div>
-              <a
-                className="cl"
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener"
-              >
-                <div>
-                  <span className="cl-lbl">LinkedIn</span>
-                  <span className="cl-val">Florent Penneçot</span>
-                </div>
-                <span className="cl-arr">→</span>
-              </a>
-              <a
-                className="cl"
-                href="https://github.com"
-                target="_blank"
-                rel="noopener"
-              >
-                <div>
-                  <span className="cl-lbl">GitHub</span>
-                  <span className="cl-val">github.com/florent</span>
-                </div>
-                <span className="cl-arr">→</span>
-              </a>
-            </div>
+            <div className="cls">{/* tes liens de contact */}</div>
           </div>
           <form className="cf f" onSubmit={sendEmail}>
             <div className="fg">
