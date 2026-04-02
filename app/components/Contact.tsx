@@ -28,10 +28,10 @@ export default function Contact({ className }: ContactProps) {
 
     emailjs
       .send(
-        "service_h6xe6q8", // ton service ID
-        "template_qbv764g", // ton template ID
+        "service_f4m5324", // ton service ID
+        "template_0uoxsbr", // ton template ID
         templateParams,
-        "IpLUSkFf-_Epho_7C", // ton public key
+        "JgRY19AzXkPami1z5", // ton public key
       )
       .then(() => {
         setSuccess(true);
