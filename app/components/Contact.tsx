@@ -12,36 +12,33 @@ export default function Contact({ className }: ContactProps) {
 
     const form = e.currentTarget;
 
+    console.log("Message value:", form.message.value);
+    console.log("Form elements:", form.elements);
+
     const templateParams = {
-      from_name: (form.elements.namedItem("from_name") as HTMLInputElement)
-        .value,
-      from_email: (form.elements.namedItem("from_email") as HTMLInputElement)
-        .value,
-      reply_to: (form.elements.namedItem("from_email") as HTMLInputElement)
-        .value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
-        .value,
+      from_name: form.from_name.value,
+      from_email: form.from_email.value,
+      reply_to: form.from_email.value,
+      message: form.message.value,
       date: new Date().toLocaleDateString("fr-FR"),
     };
+
+    console.log("Paramètres du template :", templateParams);
 
     emailjs
       .send(
         "service_h6xe6q8",
         "template_qbv764g",
         templateParams,
-        "IpLUSkFf-_Epho_7C",
+        "IpLUSkFf-_Epho_7C"
       )
-      .then(
-        (result) => {
-          console.log("Email envoyé :", result.text);
-          document.getElementById("ok")!.style.display = "block";
-          form.reset();
-        },
-        (error) => {
-          console.error("Erreur :", error.text);
-          alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
-        },
-      );
+      .then(() => {
+        document.getElementById("ok")!.style.display = "block";
+        form.reset();
+      })
+      .catch(() => {
+        alert("Erreur lors de l'envoi.");
+      });
   };
 
   return (
