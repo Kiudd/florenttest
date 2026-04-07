@@ -82,7 +82,7 @@ export default function Contact({ className }: ContactProps) {
               </div>
               <a
                 className="cl"
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/florent-penneçot-8b000138a/"
                 target="_blank"
                 rel="noopener"
               >
@@ -94,7 +94,7 @@ export default function Contact({ className }: ContactProps) {
               </a>
               <a
                 className="cl"
-                href="https://github.com"
+                href="https://github.com/Florent-Tech"
                 target="_blank"
                 rel="noopener"
               >
