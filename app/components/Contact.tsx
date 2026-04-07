@@ -12,9 +12,12 @@ export default function Contact({ className }: ContactProps) {
   const [fromEmail, setFromEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setLoading(true);
 
     const templateParams = {
       from_name: fromName,
@@ -24,25 +27,25 @@ export default function Contact({ className }: ContactProps) {
       date: new Date().toLocaleDateString("fr-FR"),
     };
 
-    console.log("PARAMS:", templateParams);
-
     emailjs
       .send(
-        "service_f4m5324", // ton service ID
-        "template_0uoxsbr", // ton template ID
+        "service_f4m5324",
+        "template_0uoxsbr",
         templateParams,
-        "JgRY19AzXkPami1z5", // ton public key
+        "JgRY19AzXkPami1z5",
       )
       .then(() => {
         setSuccess(true);
         setFromName("");
         setFromEmail("");
         setMessage("");
+        setLoading(false);
 
         setTimeout(() => setSuccess(false), 4000);
       })
       .catch((error) => {
         console.error(error);
+        setLoading(false);
         alert("Erreur lors de l'envoi du message !");
       });
   };
@@ -74,12 +77,14 @@ export default function Contact({ className }: ContactProps) {
                 </div>
                 <span className="cl-arr">→</span>
               </a>
+
               <div className="cl">
                 <div>
                   <span className="cl-lbl">Adresse</span>
                   <span className="cl-val">94 Bd Arago, Rivesaltes (66)</span>
                 </div>
               </div>
+
               <a
                 className="cl"
                 href="https://www.linkedin.com/in/florent-penneçot-8b000138a/"
@@ -92,6 +97,7 @@ export default function Contact({ className }: ContactProps) {
                 </div>
                 <span className="cl-arr">→</span>
               </a>
+
               <a
                 className="cl"
                 href="https://github.com/Florent-Tech"
@@ -146,16 +152,18 @@ export default function Contact({ className }: ContactProps) {
               />
             </div>
 
-            <button type="submit" className="btn-p">
-              Envoyer le message
+            <button type="submit" className="btn-p" disabled={loading}>
+              {loading ? "Envoi..." : "Envoyer le message"}
             </button>
 
+            {loading && (
+              <p style={{ color: "#3498db", marginTop: "10px" }}>
+                ⏳ Envoi en cours...
+              </p>
+            )}
+
             {success && (
-              <p
-                className="ok"
-                id="ok"
-                style={{ color: "green", marginTop: "10px" }}
-              >
+              <p className="ok" style={{ color: "green", marginTop: "10px" }}>
                 ✓ Message envoyé avec succès.
               </p>
             )}
