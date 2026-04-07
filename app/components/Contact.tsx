@@ -39,7 +39,6 @@ export default function Contact({ className }: ContactProps) {
         setFromEmail("");
         setMessage("");
 
-        // Faire disparaître le message après 4 secondes
         setTimeout(() => setSuccess(false), 4000);
       })
       .catch((error) => {
@@ -63,7 +62,8 @@ export default function Contact({ className }: ContactProps) {
         <div className="cg">
           <div className="f">
             <p className="ci-intro">
-              Disponible pour des stages, alternances ou discussions techniques.
+              Me contacter par Mail : Disponible pour des stages, alternances ou
+              discussions techniques.
             </p>
 
             <div className="cls">
