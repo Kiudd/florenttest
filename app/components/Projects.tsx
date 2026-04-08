@@ -5,15 +5,19 @@ const projects = [
     description:
       "Presentation de mon parcours, de mes competences et de mes projets dans une interface claire et moderne.",
     image: "",
-    featured: true,
+    featured: "portfolio",
+    pill: "Web",
+    link: "",
   },
   {
-    date: "Projet a venir",
-    title: "Projet reseau",
+    date: "08 avril 2026",
+    title: "InfraWatch",
     description:
-      "Ajoutez ici une image, la date du projet et un resume simple de ce que vous avez realise.",
+      "Mini-projet de supervision reseau local avec serveur PowerShell, monitoring ICMP, suivi CPU, RAM et trafic, alertes et tableau de bord web.",
     image: "",
-    featured: false,
+    featured: "infrawatch",
+    pill: "Reseau",
+    link: "https://www.linkedin.com/posts/florent-penne%C3%A7ot-8b000138a_supervision-raezseau-powershell-activity-7447627019066105856-FFUh?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAF_Aq8QBBfQ_JLtAHbTVq09Ll2B8VvmvEDI",
   },
   {
     date: "Projet a venir",
@@ -22,6 +26,8 @@ const projects = [
       "Cette carte est prete pour presenter un futur projet avec un titre, une image et une description.",
     image: "",
     featured: false,
+    pill: "Cyber",
+    link: "",
   },
 ];
 
@@ -49,7 +55,7 @@ export default function Projects({ className }: { className: string }) {
           {projects.map((project) => (
             <article className="project-card f" key={project.title}>
               <div className="project-media">
-                {project.featured ? (
+                {project.featured === "portfolio" ? (
                   <div className="project-preview">
                     <div className="project-preview-bar">
                       <span></span>
@@ -74,6 +80,46 @@ export default function Projects({ className }: { className: string }) {
                       </div>
                     </div>
                   </div>
+                ) : project.featured === "infrawatch" ? (
+                  <div className="project-preview project-preview-monitor">
+                    <div className="project-preview-bar">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div className="project-preview-monitor-body">
+                      <div className="monitor-head">
+                        <div className="monitor-title">InfraWatch</div>
+                        <div className="monitor-status">ONLINE</div>
+                      </div>
+                      <div className="monitor-grid">
+                        <div className="monitor-card">
+                          <span>ICMP</span>
+                          <strong>24 ms</strong>
+                        </div>
+                        <div className="monitor-card">
+                          <span>CPU</span>
+                          <strong>31%</strong>
+                        </div>
+                        <div className="monitor-card">
+                          <span>RAM</span>
+                          <strong>58%</strong>
+                        </div>
+                        <div className="monitor-card">
+                          <span>TRAFIC</span>
+                          <strong>1.2 Gb</strong>
+                        </div>
+                      </div>
+                      <div className="monitor-chart">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
                 ) : project.image ? (
                   <img src={project.image} alt={project.title} />
                 ) : (
@@ -86,10 +132,20 @@ export default function Projects({ className }: { className: string }) {
               <div className="project-body">
                 <div className="project-meta">
                   <span className="project-date">{project.date}</span>
-                  <span className="project-pill">Projet</span>
+                  <span className="project-pill">{project.pill}</span>
                 </div>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{project.description}</p>
+                {project.link && (
+                  <a
+                    className="project-link"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Voir le projet
+                  </a>
+                )}
               </div>
             </article>
           ))}
