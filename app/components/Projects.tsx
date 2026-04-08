@@ -4,7 +4,8 @@ const projects = [
     title: "Portfolio personnel",
     description:
       "Presentation de mon parcours, de mes competences et de mes projets dans une interface claire et moderne.",
-    image: "/images/Florent-Pennecot.jpeg",
+    image: "",
+    featured: true,
   },
   {
     date: "Projet a venir",
@@ -12,6 +13,7 @@ const projects = [
     description:
       "Ajoutez ici une image, la date du projet et un resume simple de ce que vous avez realise.",
     image: "",
+    featured: false,
   },
   {
     date: "Projet a venir",
@@ -19,6 +21,7 @@ const projects = [
     description:
       "Cette carte est prete pour presenter un futur projet avec un titre, une image et une description.",
     image: "",
+    featured: false,
   },
 ];
 
@@ -46,7 +49,32 @@ export default function Projects({ className }: { className: string }) {
           {projects.map((project) => (
             <article className="project-card f" key={project.title}>
               <div className="project-media">
-                {project.image ? (
+                {project.featured ? (
+                  <div className="project-preview">
+                    <div className="project-preview-bar">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div className="project-preview-body">
+                      <div className="project-preview-copy">
+                        <div className="project-preview-tag">Portfolio</div>
+                        <div className="project-preview-title">
+                          Florent
+                          <br />
+                          Pennecot
+                        </div>
+                        <div className="project-preview-line short"></div>
+                        <div className="project-preview-line"></div>
+                      </div>
+                      <div className="project-preview-side">
+                        <div className="project-preview-panel top"></div>
+                        <div className="project-preview-panel"></div>
+                        <div className="project-preview-panel small"></div>
+                      </div>
+                    </div>
+                  </div>
+                ) : project.image ? (
                   <img src={project.image} alt={project.title} />
                 ) : (
                   <div className="project-placeholder">
