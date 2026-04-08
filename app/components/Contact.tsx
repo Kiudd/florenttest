@@ -54,7 +54,7 @@ export default function Contact({ className }: ContactProps) {
     <div className={className} id="pg-contact">
       <div className="pm">
         <div className="ph f">
-          <span className="ph-tag">03 — Contact</span>
+          <span className="ph-tag">04 — Contact</span>
           <h2>
             Travaillons
             <br />

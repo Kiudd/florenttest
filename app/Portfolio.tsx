@@ -5,6 +5,7 @@ import * as THREE from "three";
 import Home from "./components/Home";
 import About from "./components/About";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 export default function Portfolio() {
@@ -408,6 +409,15 @@ export default function Portfolio() {
           </li>
           <li>
             <a
+              id="nl-projects"
+              className={currentPage === "projects" ? "on" : ""}
+              onClick={() => go("projects")}
+            >
+              Projets
+            </a>
+          </li>
+          <li>
+            <a
               id="nl-contact"
               className={currentPage === "contact" ? "on" : ""}
               onClick={() => go("contact")}
@@ -421,6 +431,9 @@ export default function Portfolio() {
       <Home className={currentPage === "home" ? "pg show" : "pg"} go={go} />
       <About className={currentPage === "about" ? "pg show" : "pg"} />
       <Experience className={currentPage === "exp" ? "pg show" : "pg"} />
+      <Projects
+        className={currentPage === "projects" ? "pg show" : "pg"}
+      />
       <Contact className={currentPage === "contact" ? "pg show" : "pg"} />
     </>
   );

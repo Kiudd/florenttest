@@ -30,6 +30,9 @@ export default function Home({
             <button className="btn-p" onClick={() => go("exp")}>
               Mon parcours
             </button>
+            <button className="btn-o" onClick={() => go("projects")}>
+              Voir mes projets
+            </button>
             <button className="btn-o" onClick={() => go("contact")}>
               Me contacter
             </button>
