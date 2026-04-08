@@ -14,8 +14,8 @@ const projects = [
     title: "InfraWatch",
     description:
       "Mini-projet de supervision reseau local avec serveur PowerShell, monitoring ICMP, suivi CPU, RAM et trafic, alertes et tableau de bord web.",
-    image: "",
-    featured: "infrawatch",
+    image: "/images/1775652649930.jpg",
+    featured: false,
     pill: "Reseau",
     link: "https://www.linkedin.com/posts/florent-penne%C3%A7ot-8b000138a_supervision-raezseau-powershell-activity-7447627019066105856-FFUh?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAF_Aq8QBBfQ_JLtAHbTVq09Ll2B8VvmvEDI",
   },
@@ -77,46 +77,6 @@ export default function Projects({ className }: { className: string }) {
                         <div className="project-preview-panel top"></div>
                         <div className="project-preview-panel"></div>
                         <div className="project-preview-panel small"></div>
-                      </div>
-                    </div>
-                  </div>
-                ) : project.featured === "infrawatch" ? (
-                  <div className="project-preview project-preview-monitor">
-                    <div className="project-preview-bar">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <div className="project-preview-monitor-body">
-                      <div className="monitor-head">
-                        <div className="monitor-title">InfraWatch</div>
-                        <div className="monitor-status">ONLINE</div>
-                      </div>
-                      <div className="monitor-grid">
-                        <div className="monitor-card">
-                          <span>ICMP</span>
-                          <strong>24 ms</strong>
-                        </div>
-                        <div className="monitor-card">
-                          <span>CPU</span>
-                          <strong>31%</strong>
-                        </div>
-                        <div className="monitor-card">
-                          <span>RAM</span>
-                          <strong>58%</strong>
-                        </div>
-                        <div className="monitor-card">
-                          <span>TRAFIC</span>
-                          <strong>1.2 Gb</strong>
-                        </div>
-                      </div>
-                      <div className="monitor-chart">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
                       </div>
                     </div>
                   </div>
