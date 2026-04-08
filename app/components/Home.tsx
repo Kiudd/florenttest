@@ -22,7 +22,7 @@ export default function Home({
           <p className="etag f">Disponible · Rivesaltes, France</p>
           <p className="h-role f">Technicien Réseau &amp; Cybersécurité</p>
           <p className="h-desc f">
-            Bienvenue sur mon site : vous y decouvrirez mon parcours, mes competences et les projets qui me tiennent a coeur.
+            Bienvenue sur mon site. Decouvrez mon parcours et mes projets.
             <br />
             Bac Pro CIEL 2023–2026 · 7 stages professionnels réalisés.
           </p>
