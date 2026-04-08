@@ -76,7 +76,7 @@ export default function About({ className }: { className: string }) {
               </div>
             </div>
           </div>
-          <div className="f">
+          <div className="about-side f">
             <span className="bt" style={{ marginTop: 0 }}>
               Formation
             </span>
