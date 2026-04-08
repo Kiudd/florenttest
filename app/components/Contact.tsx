@@ -64,10 +64,12 @@ export default function Contact({ className }: ContactProps) {
 
         <div className="cg">
           <div className="f">
-            <p className="ci-intro">
-              Me contacter par Mail : Disponible pour des stages, alternances ou
-              discussions techniques.
-            </p>
+            <div className="contact-intro-card">
+              <p className="ci-intro">
+                Me contacter par Mail : Disponible pour des stages,
+                alternances ou discussions techniques.
+              </p>
+            </div>
 
             <div className="cls">
               <a className="cl" href="tel:+33603692812">

@@ -84,7 +84,10 @@ export default function Projects({ className }: { className: string }) {
               </div>
 
               <div className="project-body">
-                <span className="project-date">{project.date}</span>
+                <div className="project-meta">
+                  <span className="project-date">{project.date}</span>
+                  <span className="project-pill">Projet</span>
+                </div>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{project.description}</p>
               </div>
