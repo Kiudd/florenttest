@@ -30,48 +30,37 @@ export default function About({ className }: { className: string }) {
               <div>
                 <div className="sk-top">
                   <span className="sk-name">Dépannage Hardware</span>
-                  <span className="sk-pct">88%</span>
+                  <span className="sk-pct">Expert</span>
                 </div>
                 <div className="bar">
-                  <div className="bf" style={{ width: "88%" }}></div>
+                  <div className="bf" style={{ width: "92%" }}></div>
                 </div>
               </div>
               <div>
                 <div className="sk-top">
-                  <span className="sk-name">
-                    Réseaux &amp; Infrastructure
-                  </span>
-                  <span className="sk-pct">82%</span>
+                  <span className="sk-name">Réseaux &amp; Infrastructure</span>
+                  <span className="sk-pct">Intermédiaire</span>
                 </div>
                 <div className="bar">
-                  <div className="bf" style={{ width: "82%" }}></div>
+                  <div className="bf" style={{ width: "74%" }}></div>
                 </div>
               </div>
               <div>
                 <div className="sk-top">
                   <span className="sk-name">Cybersécurité</span>
-                  <span className="sk-pct">75%</span>
+                  <span className="sk-pct">Débutant</span>
                 </div>
                 <div className="bar">
-                  <div className="bf" style={{ width: "75%" }}></div>
+                  <div className="bf" style={{ width: "46%" }}></div>
                 </div>
               </div>
               <div>
                 <div className="sk-top">
                   <span className="sk-name">Linux / Systèmes</span>
-                  <span className="sk-pct">70%</span>
+                  <span className="sk-pct">Intermédiaire</span>
                 </div>
                 <div className="bar">
-                  <div className="bf" style={{ width: "70%" }}></div>
-                </div>
-              </div>
-              <div>
-                <div className="sk-top">
-                  <span className="sk-name">Anglais Technique</span>
-                  <span className="sk-pct">A2</span>
-                </div>
-                <div className="bar">
-                  <div className="bf" style={{ width: "76%" }}></div>
+                  <div className="bf" style={{ width: "74%" }}></div>
                 </div>
               </div>
             </div>

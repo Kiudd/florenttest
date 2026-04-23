@@ -67,7 +67,7 @@ export default function Home({
               <span className="stat-l">Stages</span>
             </div>
             <div className="stat">
-              <span className="stat-n">76%</span>
+              <span className="stat-n">A2</span>
               <span className="stat-l">Anglais</span>
             </div>
             <div className="stat">
