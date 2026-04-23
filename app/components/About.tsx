@@ -68,7 +68,7 @@ export default function About({ className }: { className: string }) {
               <div>
                 <div className="sk-top">
                   <span className="sk-name">Anglais Technique</span>
-                  <span className="sk-pct">76%</span>
+                  <span className="sk-pct">A2</span>
                 </div>
                 <div className="bar">
                   <div className="bf" style={{ width: "76%" }}></div>
