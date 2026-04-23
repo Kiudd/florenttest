@@ -80,11 +80,11 @@ export default function Home({
             </div>
           </div>
 
-          <div
+          <a
             className="pdf-zone f"
-            onClick={() =>
-              window.open("/assets/cv/CV-Florent-Pennecot.pdf", "_blank")
-            }
+            href="/assets/cv/CV-Florent-Pennecot.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <div className="pdf-card">
               <div className="pdf-ico">PDF</div>
@@ -96,7 +96,7 @@ export default function Home({
               </div>
               <span className="pdf-arr">↗</span>
             </div>
-          </div>
+          </a>
 
           <div className="socials f">
             <a
