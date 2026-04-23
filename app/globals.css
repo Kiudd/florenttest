@@ -84,7 +84,7 @@ var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;overflow-x:hidden;mi
 .stat-l{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3)}
 
 /* PDF */
-.pdf-zone{width:100%;cursor:pointer}
+.pdf-zone{width:100%;cursor:pointer;text-decoration:none;color:inherit}
 .pdf-card{display:flex;align-items:center;gap:.9rem;padding:1.05rem 1.15rem;border:1px solid var(--bord);background:rgba(255,255,255,.8);backdrop-filter:blur(10px);transition:all .2s;border-radius:18px;box-shadow:0 12px 28px rgba(20,24,16,.05)}
 .pdf-card:hover{border-color:var(--bordh);background:var(--surf)}
 .pdf-ico{width:32px;height:40px;background:var(--k);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.48rem;font-weight:700;color:var(--w);flex-shrink:0}
