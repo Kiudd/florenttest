@@ -76,7 +76,7 @@ export default function Contact({ className }: ContactProps) {
               <div className="cl">
                 <div>
                   <span className="cl-lbl">Adresse</span>
-                  <span className="cl-val">94 Bd Arago, Rivesaltes (66)</span>
+                  <span className="cl-val">66600 Rivesaltes</span>
                 </div>
               </div>
 
