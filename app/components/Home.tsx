@@ -5,7 +5,7 @@ export default function Home({
   go: (id: string) => void;
   className: string;
 }) {
-  const cvHref = "/assets/cv/CV-Florent-Pennecot.pdf?v=2026-05-04-2";
+  const cvHref = "/assets/cv/CV-Florent-Pennecot.pdf?v=2026-05-04-3";
 
   return (
     <div className={className} id="pg-home">
